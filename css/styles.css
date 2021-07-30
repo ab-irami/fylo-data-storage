@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+:root {
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue:  hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+body {
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background: var(--very-dark-blue);
+    position: relative;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg-desktop.png") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 200px 0 0 0;
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    z-index: -1;
+}
+
+.main-section {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 10%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.top-rectangle {
+    padding: 1% 2%;    
+    width: 300px;    
+    background: var(--dark-blue);
+    border-radius: 10px 80px 10px 10px;
+}
+
+.top-rectangle > img {
+    margin: 5% 0;
+}
+
+.icons {
+    display: flex;
+    align-content: center;
+}
+
+.icons img {
+    margin: 10% 10% 5% 0; 
+    padding: 10px;
+    background: var(--very-dark-blue);
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.bottom-rectangle {
+    color: var(--pale-blue);
+    background: var(--dark-blue);
+    width: 500px;
+    height: 130px;
+    padding: 0 2%;
+    border-radius: 15px;  
+    position: relative; 
+    margin-left: 20px; 
+}
+
+.bottom-rectangle h6 {
+    margin: 5% 0;
+    font-weight: 400;
+}
+
+.progress__line {
+    width: 100%;
+    height: 15px;
+    padding: 2px;
+    margin: 2% 1%;
+    background: var(--very-dark-blue);
+    border-radius: 30px;
+}
+
+.available__storage {
+    width: 70%;
+    height: 11px;
+    background: var(--gradient);
+    border-radius: 30px;
+    padding: 1px;
+}
+
+.circle {
+    width: 9px;
+    height: 9px;
+    border-radius: 30px;
+    background: hsl(255, 100%, 100%);
+    position: relative;
+    left: 97%;    
+}
+
+.storage {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.storage__left {
+    text-align: center;
+    width: 130px;
+    background: hsl(255, 100%, 100%);   
+    color: var(--dark-blue); 
+    font-weight: 700;
+    padding: 3% 2%;
+    border-radius: 10px 10px 0 10px;
+    position: relative;
+    top: -130px;
+    left: 65%;
+}
+
+.storage__left::before {
+    content: "";
+    position: absolute;
+    left: 105px;
+    top: 45px;
+    width: 0;
+    height: 0;
+    border-right: 25px solid white;
+    border-bottom: 20px solid transparent;
+}
+
+.storage__left p {
+    font-size: 20px;
+}
+
+.storage__left span {
+    color: var(--grayish-blue);
+    font-size: 10px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (max-width: 768px) {
+    .main-section {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        margin-bottom: 0;
+    }
+
+    .top-rectangle {
+        width: 90%;
+        padding: 1% 8%;
+    }
+
+    .bottom-rectangle {
+        width: 90%;
+        margin: 5% 0 0 0;
+        padding: 2% 5%;
+        text-align: center;
+    }
+
+    .storage__left {
+        border-radius: 10px;
+        position: absolute;
+        top: 80%;
+        left: 30%;
+    }
+    
+    .storage__left::before {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .background-img {
+        background: url("../images/bg-mobile.png") no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+}
